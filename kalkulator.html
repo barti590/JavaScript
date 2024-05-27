@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="wynik"/>
+        <div class="buttons">
+            <button class="button" onclick='dodaj("1")'>1</button>
+            <button class="button" onclick='dodaj("2")'>2</button>
+            <button class="button" onclick='dodaj("3")'>3</button>
+            <button class="button" onclick='dodaj("+")'>+</button>
+
+            <button class="button" onclick='dodaj("4")'>4</button>
+            <button class="button" onclick='dodaj("5")'>5</button>
+            <button class="button" onclick='dodaj("6")'>6</button>
+            <button class="button" onclick='dodaj("-")'>-</button>
+
+            <button class="button" onclick='dodaj("7")'>7</button>
+            <button class="button" onclick='dodaj("8")'>8</button>
+            <button class="button" onclick='dodaj("9")'>9</button>
+            <button class="button" onclick='dodaj("*")'>*</button>
+
+            <button class="button" onclick='clearDisplay()'>CE</button>
+            <button class="button" onclick='dodaj("0")'>0</button>
+            <button class="button" onclick='dodaj(".")'>.</button>
+            <button class="button" onclick='dodaj("/")'>/</button>
+            
+
+            <button class="button equal" onclick='calculate()'>=</button>
+        </div>
+    </div>
+    <script>
+        function dodaj(val) 
+        {
+            document.getElementById("wynik").value += val;
+        }
+
+        function clearDisplay() 
+        {
+            document.getElementById("wynik").value = "";
+        }
+        function calculate()
+        {
+            document.getElementById("wynik").value=eval(document.getElementById("wynik").value)
+        }
+
+    </script>
+</body>
+</html>
